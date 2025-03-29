@@ -28,8 +28,8 @@ This project is a React-based user management system that allows you to fetch, d
 1. Clone the repository:
 
    ```sh
-   git clone https://github.com/your-repo/user-list.git
-   cd user-list
+   git clone https://github.com/your-repo/users.git
+   cd users
    ```
 
 2. Install dependencies:
