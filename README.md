@@ -28,7 +28,7 @@ This project is a React-based user management system that allows you to fetch, d
 1. Clone the repository:
 
    ```sh
-   git clone https://github.com/your-repo/users.git
+   git clone https://github.com/your-username/users.git
    cd users
    ```
 
