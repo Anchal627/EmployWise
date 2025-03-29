@@ -22,7 +22,7 @@ export const deleteUser = async (id) => {
   await axios.delete(`${URL}/users/${id}`);
 };
 export const updateUser = async (id, userData) => {
-  const response = await axios.put(`${URL}/users/${id}`);
+  const response = await axios.put(`${URL}/users/${id}`, userData);
   return response.data;
 };
 export const login = async (email, password) => {

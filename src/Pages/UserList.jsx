@@ -171,21 +171,25 @@ function UserList() {
                   <label className="block font-semibold">First Name</label>
                   <input
                     type="text"
-                    value={selectedUser.first_name}
-                    onChange={handleEdit}
+                    value={formData.first_name}
+                    onChange={(e) =>
+                      setFormData({ ...formData, first_name: e.target.value })
+                    }
                     className="w-full border p-2 rounded-md"
                   />
                   <label className="block font-semibold mt-2">Last Name</label>
                   <input
                     type="text"
-                    value={selectedUser.last_name}
-                    onChange={handleEdit}
+                    value={formData.last_name}
+                    onChange={(e) =>
+                      setFormData({ ...formData, last_name: e.target.value })
+                    }
                     className="w-full border p-2 rounded-md"
                   />
                   <label className="block font-semibold mt-2">Email</label>
                   <input
                     type="email"
-                    value={selectedUser.email}
+                    value={formData.email}
                     onChange={(e) =>
                       setFormData({ ...formData, email: e.target.value })
                     }
