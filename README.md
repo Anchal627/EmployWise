@@ -1,70 +1,82 @@
-# Getting Started with Create React App
+# User List Management
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a React-based user management system that allows you to fetch, display, edit, delete, and search users. It also includes authentication with login/logout functionality.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Fetch users from an API and display them in a list
+- Search users by name
+- Edit user details through a modal
+- Delete users with confirmation
+- Pagination support
+- Logout functionality
+- Toast notifications for user interactions
 
-### `npm start`
+## Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- React.js
+- Tailwind CSS (for styling)
+- React Router (for navigation)
+- React Toastify (for notifications)
+- Lucide Icons (for UI enhancements)
+- Axios (for API requests)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Installation
 
-### `npm test`
+1. Clone the repository:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   ```sh
+   git clone https://github.com/your-repo/user-list.git
+   cd user-list
+   ```
 
-### `npm run build`
+2. Install dependencies:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   ```sh
+   npm install
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. Start the development server:
+   ```sh
+   npm start
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## API Integration
 
-### `npm run eject`
+This project fetches user data from an external API. Ensure your backend API endpoints match the functions in `api.js`:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- `fetchAllUser(page)` - Fetches paginated user data.
+- `deleteUser(id)` - Deletes a user by ID.
+- `updateUser(id, data)` - Updates user details.
+- `login(email, password)` - Authenticates users.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Usage
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Login
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Users must log in before accessing the user list. Upon successful login, a JWT token is stored in local storage and used for authentication.
 
-## Learn More
+### User List
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Users are displayed in a grid format with profile images.
+- A search bar allows filtering by name.
+- Pagination controls help navigate between pages.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Editing Users
 
-### Code Splitting
+- Clicking "Edit" opens a modal where user details can be updated.
+- Changes are submitted via the `updateUser` API function.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Deleting Users
 
-### Analyzing the Bundle Size
+- Clicking "Delete" prompts a confirmation before removing a user.
+- Users are deleted using the `deleteUser` API function.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Logout
 
-### Making a Progressive Web App
+- Clicking "Logout" removes the authentication token and redirects to the login page.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Toast Notifications
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **Success:** Displays after a successful login, user update, or deletion.
+- **Error:** Displays if login fails or user actions encounter issues.
